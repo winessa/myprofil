@@ -43,18 +43,45 @@
         .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary-color); }
 
-        /* Hero */
+        /* Hero - DIPERBARUI */
         #home {
-            min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            padding: 0 8%; background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 100px 8% 0; 
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            gap: 50px;
         }
 
+        .home-content { flex: 1; }
         .hero-subtitle { color: var(--primary-color); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; font-size: 0.9rem; }
-        #home h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 700; }
-        #home p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
+        .home-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 700; }
+        .home-content p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
 
-        .btn { padding: 14px 32px; background-color: var(--primary-color); color: #0f172a; text-decoration: none; border-radius: 6px; font-weight: 600; transition: 0.3s; }
+        .btn { padding: 14px 32px; background-color: var(--primary-color); color: #0f172a; text-decoration: none; border-radius: 6px; font-weight: 600; transition: 0.3s; display: inline-block; }
         .btn:hover { background-color: #0ea5e9; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); }
+
+        .home-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .home-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--border-color);
+            transition: 0.4s ease;
+        }
+        
+        .home-image img:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 25px 50px rgba(56, 189, 248, 0.2);
+        }
 
         /* Section Umum */
         .section { padding: 100px 8%; }
@@ -72,7 +99,6 @@
         .portfolio-card { background-color: var(--bg-card); border-radius: 8px; overflow: hidden; transition: 0.4s; border: 1px solid var(--border-color); }
         .portfolio-card:hover { transform: translateY(-8px); border-color: var(--primary-color); }
         
-        /* Modifikasi CSS agar gambar & video rapi */
         .card-img { 
             height: 220px; 
             background-color: #0f172a; 
@@ -81,14 +107,14 @@
             align-items: center; 
             color: var(--border-color); 
             font-size: 0.9rem;
-            overflow: hidden; /* Mencegah gambar/video keluar kotak */
+            overflow: hidden; 
         }
         
         .card-img img,
         .card-img video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Membuat gambar/video memenuhi kotak secara proporsional */
+            object-fit: cover; 
             border: none;
         }
 
@@ -137,9 +163,19 @@
 
         .copyright { color: var(--text-muted); font-size: 0.85rem; margin-top: 20px; }
 
-        /* Mobile */
+        /* Mobile - DIPERBARUI */
         @media (max-width: 768px) {
-            #home h1 { font-size: 3rem; }
+            #home {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+                padding-bottom: 50px;
+            }
+            .home-content h1 { font-size: 3rem; }
+            .home-content p { margin: 0 auto 30px; }
+            .home-image { margin-top: 40px; }
+            .home-image img { max-width: 280px; }
+            
             .nav-links { display: none; }
             .about-container { grid-template-columns: 1fr; }
         }
@@ -158,10 +194,16 @@
     </nav>
 
     <section id="home">
-        <div class="hero-subtitle">Get to Know Me!!</div>
-        <h1>Erwin Esa<br>Septian</h1>
-        <p>Seorang profesional di bidang Desain Grafis & Video Editing. Berkomitmen untuk mengubah gagasan kompleks menjadi solusi visual yang elegan dan berdampak.</p>
-        <a href="#portfolio" class="btn">Eksplorasi Karya</a>
+        <div class="home-content">
+            <div class="hero-subtitle">Get to Know Me!!</div>
+            <h1>Erwin Esa<br>Septian</h1>
+            <p>Seorang profesional di bidang Desain Grafis & Video Editing. Berkomitmen untuk mengubah gagasan kompleks menjadi solusi visual yang elegan dan berdampak.</p>
+            <a href="#portfolio" class="btn">Eksplorasi Karya</a>
+        </div>
+        
+        <div class="home-image">
+            <img src="erwin.jpg" alt="Foto Erwin Esa Septian">
+        </div>
     </section>
 
     <section class="section" id="about">
